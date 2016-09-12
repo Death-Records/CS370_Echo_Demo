@@ -55,13 +55,20 @@ public class KnockKnockConversation extends Conversation {
 		
 		if (INTENT_START.equals(intentName)) {
 			response = handleStartJokeIntent(intentReq, session);
-        }
+        	}
 		else if (INTENT_WHO_DER.equals(intentName)) {
 			response = handleWhoThereIntent(intentReq, session);
-        }
+        	}
 		else if (INTENT_DR_WHO.equals(intentName)) {
 			response = handleDrWhoIntent(intentReq, session);
-        }
+        	}
+	        	else if (INTENT_CLASSES.equals(intentname)){
+	    			response = handleClassesTaughtIntent(intentReq, session);
+		}
+		else if (INTENT_CONTACTINFO.equals(intentname)){
+    			respone = handlecontactinformationintent(intentReq, session);
+		}
+
 		else {
 			response = newTellResponse("Whatchu talkin' bout!", false);
 		}
